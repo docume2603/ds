@@ -1,0 +1,131 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# 目的：
+# markdown ファイル（*.md, *.mdx）の内部でリンクしている markdown が有効かどうかチェックする。内部リンクは同一ディレクトリだけを対象にしている。
+#
+#
+# 使い方：
+# 1. cd /c/my_prog/docusaurus/github_page
+# 2. ./md_link_check.py .
+#
+# 履歴：
+# 2025-02-09 base file name が '_' で始まるファイルは無視する。
+# 2024-09-25 md, mdx ファイルのファイル名に変な文字が使われていないことのチェックを追加。
+# 2024-08-18 作成。ChatGPT-4o に作成依頼。
+#
+
+import os
+import re
+import sys
+
+class Gd:
+    count_illegal_name: int = 0
+
+# Exclude directories (fixed values)
+exclude_dirs: list[str] = ['./node_modules', 'src', 'static/img']
+
+# Define a pattern for valid filenames (allowed characters: alphanumeric, '_', '-')
+valid_filename_pattern = re.compile(r'^[0-9a-zA-Z_\-@]+$')
+
+
+def find_markdown_files(directory: str, exclude_dirs:list[str]) ->list[str]:
+    """Recursively find all markdown files in the given directory, excluding specified directories and check filenames."""
+    markdown_files = []
+    exclude_paths = [os.path.abspath(exclude_dir) for exclude_dir in exclude_dirs]
+
+    for exclude_dir in exclude_paths:
+        if not os.path.exists(exclude_dir):
+            print(f"Error: Exclude directory does not exist: {exclude_dir}")
+            sys.exit(1)
+
+    for root, dirs, files in os.walk(directory):
+        # Exclude specified directories
+        dirs[:] = [d for d in dirs if os.path.abspath(os.path.join(root, d)) not in exclude_paths]
+
+        for file in files:
+            if file.endswith(('.md', '.mdx')):
+                full_path = os.path.join(root, file)
+                # Check for invalid characters in the base filename
+                base_filename = os.path.splitext(file)[0]  # Remove extension
+                # '_' で始まる base filename の場合（'_' で始まる file 名の場合）は追加しない
+                if base_filename.startswith('_'):
+                    continue
+                if not valid_filename_pattern.match(base_filename):
+                    print(f"Error: Invalid characters in filename {full_path}")
+                    Gd.count_illegal_name += 1
+                else:
+                    markdown_files.append(full_path)
+
+    return markdown_files
+
+
+def extract_internal_links(markdown_file: str) -> list[str]:
+    """Extract internal markdown links from a markdown file."""
+    links = []
+    with open(markdown_file, 'r', encoding='utf-8') as file:
+        content = file.read()
+
+        # 以下は内部アンカー（#...の部分）が扱えない。
+        # Markdown link pattern: [title](filename.md) or [title](filename.mdx)
+        # Exclude http(s) links and links with directories
+        # links = re.findall(r'\[.*?\]\((?!http[s]?://|/|\.{0,2}/)([^/]*?\.mdx?)\)', content)
+
+        # [text](...) の ... 部分を対象にし、
+        # 1) http(s) / / / ./ / ../ で始まらない
+        # 2) / を含まない（=同一ディレクトリ）
+        # 3) .md / .mdx までをグループ1として取得
+        # 4) 後続の ?query / #fragment は任意で許容しつつ非キャプチャで消費
+        pattern = re.compile(
+            r'\[.*?\]\('
+            r'(?!https?://|/|\.{1,2}/)'          # 外部/絶対/相対ディレクトリ先頭を除外
+            r'('                                  # --- キャプチャ開始（返すのはここだけ）
+            r'[^/\s)]+?\.mdx?'                    #   / を含まない .md / .mdx
+            r')'                                  # --- キャプチャ終わり
+            r'(?:\?[^\s)#]*)?'                    # 任意のクエリ（非キャプチャ・無視）
+            r'(?:#[^\s)]*)?'                      # 任意のフラグメント（非キャプチャ・無視）
+            r'\)',
+            flags=re.IGNORECASE
+        )
+        links = pattern.findall(content)
+
+
+        """
+        <a href="https://ouchaku.github.io/ds/blog/2024/08/04/lam_old_articles">Aleister Crowley が召喚した LAM と グレイ型 ET の正体</a>    (2024-08-04)
+        """
+        direct_link = re.findall(r'http[s]?://ume2509\.github\.io/ds/.+', content)
+        if direct_link :
+            print(f"Direct Link Error: {markdown_file=}: {direct_link=}")
+            sys.exit(1)
+    return links
+
+
+def check_links(markdown_files: list[str]) ->int:
+    """Check if internal links in markdown files point to existing files."""
+    error_count = 0
+
+    for markdown_file in markdown_files:
+        directory = os.path.dirname(markdown_file)
+        links = extract_internal_links(markdown_file)
+
+        for link in links:
+            target_file = os.path.join(directory, link)
+            if not os.path.exists(target_file):
+                print(f"Error: internal link not found.[{markdown_file} --> {link}]")
+                error_count += 1
+
+    return error_count
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: ./md_link_check.py <target_dir>")
+        sys.exit(1)
+
+    target_dir: str = sys.argv[1]
+
+    markdown_files:list[str] = find_markdown_files(target_dir, exclude_dirs)
+    error_count:int = check_links(markdown_files)
+
+    print(f"\nTotal link errors: {error_count}")
+    print(f"Total markdown filename errors:{Gd.count_illegal_name}")
+    sys.exit(error_count + Gd.count_illegal_name)

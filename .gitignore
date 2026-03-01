@@ -1,0 +1,16 @@
+node_modules/
+package-lock.json
+*~
+*.old
+static/
+node_modules/
+.docusaurus/
+build/
+*~
+*.jpg
+*.mp4
+*.png
+*.gif
+*.mp3
+_*
+

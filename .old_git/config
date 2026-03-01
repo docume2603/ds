@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+  ignorecase = true
+[user]
+  name = docume2603
+  email =docume2603@gmail.com
+[remote "origin"]
+	url = git@github.com:docume2603/ds.git
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main

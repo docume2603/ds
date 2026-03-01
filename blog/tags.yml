@@ -1,0 +1,352 @@
+abduction:
+  label: abduction
+  permalink: /abduction
+  description: abduction
+AI:
+  label: AI
+  permalink: /AI
+  description: AI
+amendmark:
+  label: amendmark
+  permalink: /amendmark
+  description: amendmark
+angel_hair:
+  label: angel_hair
+  permalink: /angel_hair
+  description: angel_hair
+BEK:
+  label: BEK
+  permalink: /BEK
+  description: BEK
+BS:
+  label: BS
+  permalink: /BS
+  description: BS
+bigfoot:
+  label: bigfoot
+  permalink: /bigfoot
+  description: bigfoot
+black_heli:
+  label: black_heli
+  permalink: /black_heli
+  description: black_heli
+cattle_mutilation:
+  label: cattle_mutilation
+  permalink: /cattle_mutilation
+  description: cattle_mutilation
+consciousness:
+  label: consciousness
+  permalink: /consciousness
+  description: consciousness
+contactee:
+  label: contactee
+  permalink: /contactee
+  description: contactee
+crop_formation:
+  label: crop_formation
+  permalink: /crop_formation
+  description: crop_formation
+cryptid:
+  label: cryptid
+  permalink: /cryptid
+  description: cryptid
+DMT:
+  label: DMT
+  permalink: /DMT
+  description: DMT
+DOC:
+  label: DOC
+  permalink: /DOC
+  description: Disorders of Consciousness
+docs:
+  label: docs
+  permalink: /docs
+  description: documents
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+economy:
+  label: economy
+  permalink: /economy
+  description: economy
+EMF_anomaly:
+  label: EMF_anomaly
+  permalink: /EMF_anomaly
+  description: EMF異常
+en_fix1:
+  label: en_fix1
+  permalink: /en_fix1
+  description: en.text 生成 bug-fix(2024-09-03)
+ESP:
+  label: ESP
+  permalink: /ESP
+  description: ESP
+fortean:
+  label: fortean
+  permalink: /fortean
+  description: fortean
+god:
+  label: god
+  permalink: /god
+  description: god
+ghost:
+  label: ghost
+  permalink: /ghost
+  description: ghost
+hitchhiker_phenomenon:
+  label: hitchhiker_phenomenon
+  permalink: /hitchhiker_phenomenon
+  description: hitchhiker_phenomenon
+hypnotism:
+  label: hypnotism
+  permalink: /hypnotism
+  description: hypnotism
+hoax:
+  label: hoax
+  permalink: /hoax
+  description: hoax
+image:
+  label: image
+  permalink: /image
+  description: image
+implant:
+  label: implant
+  permalink: /implant
+  description: implant
+life:
+  label: life
+  permalink: /life
+  description: life
+MIB:
+  label: MIB
+  permalink: /MIB
+  description: UFO 関連
+missing-411:
+  label: missing-411
+  permalink: /missing-411
+  description: missing-411
+missing-time:
+  label: missing-time
+  permalink: /missing-time
+  description: missing-time
+mysticism:
+  label: mysticism
+  permalink: /mysticism
+  description: mysticism
+money:
+  label: money
+  permalink: /money
+  description: money
+mystery:
+  label: mystery
+  permalink: /mystery
+  description: mystery
+NDE:
+  label: NDE
+  permalink: /NDE
+  description: 臨死体験
+need_ai:
+  label: need_ai
+  permalink: /need_ai
+  description: AI による要約/分析を予定
+OBE:
+  label: OBE
+  permalink: /OBE
+  description: OBE
+occult:
+  label: occult
+  permalink: /occult
+  description: occult
+orb:
+  label: orb
+  permalink: /orb
+  description: orb
+oz_factor:
+  label: oz_factor
+  permalink: /oz_factor
+  description: oz_factor
+paranormal:
+  label: paranormal
+  permalink: /paranormal
+  description: paranormal
+parapsychology:
+  label: parapsychology
+  permalink: /parapsychology
+  description: parapsychology
+PSI:
+  label: PSI
+  permalink: /PSI
+  description: PSI
+philosophy:
+  label: philosophy
+  permalink: /philosophy
+  description: philosophy
+poltergeist:
+  label: poltergeist
+  permalink: /poltergeist
+  description: poltergeist
+psychic:
+  label: psychic
+  permalink: /psychic
+  description: psychic
+psychology:
+  label: psychology
+  permalink: /psycology
+  description: psycology
+reincarnation:
+  label: reincarnation
+  permalink: /reincarnation
+  description: reincarnation
+remote_viewing:
+  label: remote_viewing
+  permalink: /remote_viewing
+  description: remote_viewing
+religion:
+  label: religion
+  permalink: /religion
+  description: religion
+roswell:
+  label: roswell
+  permalink: /roswell
+  description: roswell
+lucid_dream:
+  label: lucid_dreadm
+  permalink: /lucid_dream
+  description: lucid_dream
+satori:
+  label: satori
+  permalink: /satori
+  description: satori
+science:
+  label: science
+  permalink: /science
+  description: science
+skeptic:
+  label: skeptic
+  permalink: /skeptic
+  description: skeptic
+spiritual:
+  label: spiritual
+  permalink: /spiritual
+  description: spiritual
+synchronicity:
+  label: synchronicity
+  permalink: /synchronicity
+  description: synchronicity
+tech:
+  label: tech
+  permalink: /tech
+  description: tech
+tric:
+  label: tric
+  permalink: /tric
+  description: tric
+trauma:
+  label: trauma
+  permalink: /trauma
+  description: trauma
+UFO:
+  label: UFO
+  permalink: /UFO
+  description: UFO 関連
+ufo_metal:
+  label: ufo_metal
+  permalink: /ufo_metal
+  description: UFO 関連
+unravel:
+  label: unravel
+  permalink: /unravel
+  description: 解きほぐす
+zen:
+  label: zen
+  permalink: /zen
+  description: 禅
+2024-06:
+  label: 2024-06
+  permalink: /2024-06
+  description: 2024-06
+2024-07:
+  label: 2024-07
+  permalink: /2024-07
+  description: 2024-07
+2024-08:
+  label: 2024-08
+  permalink: /2024-08
+  description: 2024-08
+2024-09:
+  label: 2024-09
+  permalink: /2024-09
+  description: 2024-09
+2024-10:
+  label: 2024-10
+  permalink: /2024-10
+  description: 2024-10
+2024-11:
+  label: 2024-11
+  permalink: /2024-11
+  description: 2024-11
+2024-12:
+  label: 2024-12
+  permalink: /2024-12
+  description: 2024-12
+2025-01:
+  label: 2025-01
+  permalink: /2025-01
+  description: 2025-01
+2025-02:
+  label: 2025-02
+  permalink: /2025-02
+  description: 2025-02
+2025-03:
+  label: 2025-03
+  permalink: /2025-03
+  description: 2025-03
+2025-04:
+  label: 2025-04
+  permalink: /2025-04
+  description: 2025-04
+2025-05:
+  label: 2025-05
+  permalink: /2025-05
+  description: 2025-05
+2025-06:
+  label: 2025-06
+  permalink: /2025-06
+  description: 2025-06
+2025-07:
+  label: 2025-07
+  permalink: /2025-07
+  description: 2025-07
+2025-08:
+  label: 2025-08
+  permalink: /2025-08
+  description: 2025-08
+2025-09:
+  label: 2025-09
+  permalink: /2025-09
+  description: 2025-09
+2025-10:
+  label: 2025-10
+  permalink: /2025-10
+  description: 2025-10
+2025-11:
+  label: 2025-11
+  permalink: /2025-11
+  description: 2025-11
+2025-12:
+  label: 2025-12
+  permalink: /2025-12
+  description: 2025-12
+2026-01:
+  label: 2026-01
+  permalink: /2026-01
+  description: 2026-01
+2026-02:
+  label: 2026-02
+  permalink: /2026-02
+  description: 2026-02
+2026-03:
+  label: 2026-03
+  permalink: /2026-03
+  description: 2026-03

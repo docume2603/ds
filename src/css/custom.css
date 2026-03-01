@@ -1,0 +1,280 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;  
+}
+
+
+h2 {
+  background: #333366;/*背景色*/
+  padding: 0.3em;/*文字まわり（上下左右）の余白*/
+}
+
+h3 {
+  background: #003300;/*背景色*/
+  padding: 0.2em;/*文字まわり（上下左右）の余白*/
+}
+
+h4 {
+  margin-top: 1rem;
+
+  color: #ffffff;/*文字色*/
+  border: solid 3px #336600;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+
+h5 {
+  margin-top: 1rem;
+
+  color: #ffffff;/*文字色*/
+  border: solid 2px #333333;/*線色*/
+  padding: 0.3em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+
+table tr th { 
+  padding: .2em .8em .2em .8em;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.8rem;
+}
+
+/*
+table th{
+    background-color: #334455;
+}
+table td{
+    background-color: #22222f;
+}
+*/
+
+.my_warn{
+  background-color:red;
+  color:yellow;
+}
+
+/*----------------------*/
+/* ---- Light mode ---- */
+/*----------------------*/
+html[data-theme='light'] h2 {
+  background: #7788bb; /* #333366; */
+}
+html[data-theme='light'] h3 {
+  background: #00cc77;
+}
+html[data-theme='light'] h4 {
+  color: #000000;
+  border: solid 3px #336600;
+}
+html[data-theme='light'] h5 {
+  color: #000000;
+  border: solid 2px #333333;
+}
+html[data-theme='light'] table th {
+  background-color: #aaaaaa;
+  color: #000000;
+  border-color: #000000;
+}
+html[data-theme='light'] table td {
+  background-color: #eeeeee;
+  color: #000000;
+  border-color: #000000;
+}
+
+
+
+/*----------------------*/
+/* ---- Dark mode ---- */
+/*----------------------*/
+html[data-theme='dark'] h2 {
+  background: #222255; /* #5555aa; */  /* 例: ダーク用のやや明るいブルー */
+}
+html[data-theme='dark'] h3 {
+  background: #224433; /* #006600; */
+}
+html[data-theme='dark'] h4 {
+  color: #eeeeee;
+  border: solid 3px #66aa66;
+}
+html[data-theme='dark'] h5 {
+  color: #eeeeee;
+  border: solid 2px #666666;
+}
+html[data-theme='dark'] table th {
+  background-color: #556677;
+}
+html[data-theme='dark'] table td {
+  background-color: #333344;
+}
+
+
+/* add 2025-09-28 for  admonition */
+/* ========================================
+   1. カスタムCSS変数の定義
+   ========================================= */
+
+/* ライトモード時の色設定（デフォルト） */
+:root {
+  /* 背景色：非常に明るい色 */
+  --admonition-bg-color: #f0f8ff;       
+  /* 左ボーダー色：中程度の青 */
+  --admonition-border-color: #4a90e2;    
+  /* アイコンとラベルの色：濃い青 */
+  --admonition-header-color: #2c5282;  
+  /* リンクの色 */
+  --admonition-link-color: #3182ce;
+}
+
+/* ダークモード時の色設定（html[data-theme='dark']で上書き） */
+html[data-theme='dark'] {
+  /* 背景色：濃い青/ダークグレー */
+  --admonition-bg-color: #1a202c;       
+  /* 左ボーダー色：明るい水色 */
+  --admonition-border-color: #81e6d9;   
+  /* アイコンとラベルの色：明るい水色 */
+  --admonition-header-color: #4a90e2;   
+  /* リンクの色 */
+  --admonition-link-color: #81e6d9;
+}
+
+/* =======================================
+   2. アドモニション本体のスタイル
+   ======================================= */
+
+/* ベースとなる囲み全体のスタイル */
+.my_admonition {
+  /* カスタム変数を適用 */
+  background-color: var(--admonition-bg-color);
+  border-left: 5px solid var(--admonition-border-color);
+  color: var(--admonition-header-color); /* 通常のテキストもテーマに応じて変わるように */
+  
+  /* 前回と同じレイアウト設定 */
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem; 
+  position: relative; 
+  
+  /* 標準の行間（line-height）を設定し、読みやすくする */
+  line-height: 1.6; /* 調整 */  
+
+}
+
+/* 囲み内のすべての直接のテキストコンテンツ（<p>タグなど）のスタイルを調整 */
+.my_admonition > p,
+.my_admonition > ul,
+.my_admonition > ol {
+  /* Docusaurus標準アドモニションに近づけるため、段落の上下に余白を設定 */
+  margin-top: 0.5rem; 
+  margin-bottom: 0.5rem;
+}
+
+/* 囲み内の最初の段落やリストの上部の余白は不要なため削除（ヘッダーと重ならないようにするため） */
+.my_admonition > *:first-child {
+  margin-top: 0;
+}
+
+/* 囲み内の最後の段落やリストの下部の余白は不要なため削除 */
+.my_admonition > *:last-child {
+  margin-bottom: 0;
+}
+
+
+/* 疑似要素（アイコンとラベル）の挿入とスタイリング */
+.my_admonition::before {
+  content: "ⓘ INFO"; 
+  
+  /* カスタム変数を適用 */
+  color: var(--admonition-header-color); 
+  
+  /* 前回と同じレイアウト設定 */
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  position: absolute;
+  top: 1rem;      
+  left: 1.5rem;   
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem; 
+}
+
+/* コンテンツ内のリンクのスタイル */
+.my_admonition a {
+  /* カスタム変数を適用 */
+  color: var(--admonition-link-color);
+  text-decoration: underline; 
+}
+
+/* その他の調整 */
+.my_admonition p {
+  color: inherit; /* 親要素のテキスト色を継承 */
+}
+
+
+
+
+
+
+
+
+
+
+/* 引用部分  */
+.quote-4 {
+    max-width: 500px;
+    position: relative;
+    padding: 1em 1.5em 1em 1em;
+    border: 2px solid #2589d0;
+    border-left-width: 0.3em;
+    border-radius: 3px;
+}
+
+.quote-4::after {
+    position: absolute;
+    top: 0;
+    left: -0.3em;
+    width: 0.3em;
+    height: 100%;
+    background: #556677;
+    content: '';
+}
+
+.quote-4 p {
+    margin-top: 0;
+}
+
+.quote-4 cite {
+    display: block;
+    color: #777;
+    font-size: .8em;
+    text-align: right;
+}
